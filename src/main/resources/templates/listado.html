@@ -1,0 +1,34 @@
+ <!DOCTYPE html>
+<html xmlms:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<meta charset="ISO-8859-1">
+<title>Lista de Estudiantes</title>
+</head>
+<body>
+	
+	<table class="table table-bordered">
+		<thead >
+			<th>Codigo</th>
+			<th>Nombre</th>
+			<th>Apellido</th>
+			<th>Carne</th>
+			<th>Carrera</th>
+		</thead>
+		<th:block th:each="estudiante, row: ${estudiantes}">
+			<tr>
+				<td th:text="${estudiante.codigo}"/>
+				<td th:text="${estudiante.nombre}"/>
+				<td th:text="${estudiante.apellido}"/>
+				<td th:text="${estudiante.carne}"/>
+				<td th:text="${estudiante.carrera}"/>
+			</tr>
+		</th:block>
+	</table>
+	
+	<br>
+	<br>
+	<br><button class="btn btn-secondary" onclick="window.location.href='/inicio'">Volver a ingresar un estudiante</button>
+
+</body>
+</html>
